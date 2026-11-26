@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Satranç vol² · İndir</title><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0e1512">
+<style>
+:root{--bg:#0e1512;--ink:#eafaf1;--mute:#8fa39b;--acc:#3dff9a;--panel:#16221c}
+@media (prefers-color-scheme:light){:root{--bg:#f2f7f4;--ink:#12201a;--mute:#52665d;--acc:#0a8f57;--panel:#fff}}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center;gap:14px;padding:28px 18px;background:var(--bg);color:var(--ink);font:16px system-ui,sans-serif}
+img{width:96px;height:96px;border-radius:22px}h1{margin:4px 0 0;font-size:28px;letter-spacing:.04em}p{margin:0;color:var(--mute);text-align:center;max-width:420px}
+.btn{display:block;width:100%;max-width:420px;padding:15px;border-radius:14px;border:1px solid var(--acc);background:var(--panel);color:var(--ink);font:600 16px system-ui;text-align:center;text-decoration:none;cursor:pointer}
+.btn.pri{background:var(--acc);color:#04130b}.card{width:100%;max-width:420px;background:var(--panel);border-radius:14px;padding:14px;color:var(--mute);font-size:14px;line-height:1.5}.card b{color:var(--ink)}
+</style></head><body>
+<img src="icon-192.png" alt=""><h1>SATRANÇ VOL²</h1><p>Online ve çevrimdışı satranç. Aşağıdan cihazına uygun sürümü indir.</p>
+<a class="btn pri" id="apk" href="#">📱 Android için APK indir</a>
+<a class="btn" href="index.html">▶ Tarayıcıda hemen oyna</a>
+<button class="btn" id="inst">💻 Bilgisayara / telefona uygulama olarak yükle</button>
+<div class="card"><b>Bilgisayar (Windows, Mac, Linux):</b> Chrome veya Edge'de bu siteyi aç, adres çubuğundaki yükle simgesine bas ya da yukarıdaki yükle düğmesini kullan. Masaüstüne kısayol olur, internetsiz de açılır.<br><br><b>Android:</b> APK'yı indirip aç. “Bilinmeyen kaynaklardan yükle” iznini isterse ver.<br><br><b>Güncelleme:</b> Uygulama internet varken kendini otomatik günceller. Yeni APK yalnızca büyük değişikliklerde gerekir.</div>
+<script>
+const h=location.hostname,u=h.endsWith('.github.io')?h.split('.')[0]:'';
+document.getElementById('apk').href=u?`https://github.com/${u}/${h}/releases/latest/download/satranc-vol2.apk`:'#';
+let dp=null;addEventListener('beforeinstallprompt',e=>{e.preventDefault();dp=e});
+document.getElementById('inst').onclick=async()=>{if(dp){dp.prompt();dp=null}else alert('Tarayıcı menüsünden (⋮) “Uygulamayı yükle” ya da “Ana ekrana ekle”yi seç. iPhone’da Safari: Paylaş → Ana Ekrana Ekle.')};
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
